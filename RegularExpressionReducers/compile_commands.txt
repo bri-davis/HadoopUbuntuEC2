@@ -1,9 +1,15 @@
-
+### Compile the java file into binary that can be executed by the JVM
 
 javac -classpath /home/ubuntu/hadoop-2.7.3/etc/hadoop:/home/ubuntu/hadoop-2.7.3/share/hadoop/common/lib/*:/home/ubuntu/hadoop-2.7.3/share/hadoop/common/*:/home/ubuntu/hadoop-2.7.3/share/hadoop/hdfs:/home/ubuntu/hadoop-2.7.3/share/hadoop/hdfs/lib/*:/home/ubuntu/hadoop-2.7.3/share/hadoop/hdfs/*:/home/ubuntu/hadoop-2.7.3/share/hadoop/yarn/lib/*:/home/ubuntu/hadoop-2.7.3/share/hadoop/yarn/*:/home/ubuntu/hadoop-2.7.3/share/hadoop/mapreduce/lib/*:/home/ubuntu/hadoop-2.7.3/share/hadoop/mapreduce/*:/home/ubuntu/hadoop-2.7.3/contrib/capacity-scheduler/*.jar -d WordCountClasses/ WordCount.java
 
 
+
+### Compile the java classes into a jar to execute on the HDFS
+
 jar -cvf WordCount.jar -C WordCountClasses/ .
 
+
+
+### Execute the jar on the HDFS
 
 hadoop jar WordCount.jar WordCount /input /output5ReducersWords
